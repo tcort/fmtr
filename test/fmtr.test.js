@@ -24,4 +24,9 @@ describe('fmtr', function () {
         expect(fmtr('Xx ${hello} xX', { hello: 'world' })).to.be('Xx world xX');
     });
 
+    it('should ignore undefined variables', function() {
+        expect(fmtr('Xx ${foobar} xX')).to.be('Xx  xX');
+        expect(fmtr('Xx ${foobar} xX', { baz: 123 })).to.be('Xx  xX');
+    });
+
 });
