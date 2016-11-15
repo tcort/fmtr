@@ -29,4 +29,9 @@ describe('fmtr', function () {
         expect(fmtr('Xx ${foobar} xX', { baz: 123 })).to.be('Xx  xX');
     });
 
+    it('should support deep paths', function () {
+        expect(fmtr('${foo.bar}', { foo: { bar: 1 } })).to.be('1');
+        expect(fmtr('${foo[1]}', { foo: [ 1, 2, 3 ] })).to.be('2');
+    });
+
 });
