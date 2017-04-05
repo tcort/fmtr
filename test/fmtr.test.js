@@ -27,6 +27,7 @@ describe('fmtr', function () {
     it('should ignore undefined variables', function() {
         expect(fmtr('Xx ${foobar} xX')).to.be('Xx  xX');
         expect(fmtr('Xx ${foobar} xX', { baz: 123 })).to.be('Xx  xX');
+        expect(fmtr('Xx ${foo} ${bar} xX', { bar: 123 })).to.be('Xx  123 xX');
     });
 
     it('should support deep paths', function () {
@@ -34,4 +35,13 @@ describe('fmtr', function () {
         expect(fmtr('${foo[1]}', { foo: [ 1, 2, 3 ] })).to.be('2');
     });
 
+    it('should handle the example from the README.md', function () {
+        var user = {
+            username: 'alice',
+            spouse: 'bob',
+            enemy: 'eve'
+        };
+
+        expect(fmtr('${username} is married to ${spouse} and hates ${enemy}', user)).to.be("alice is married to bob and hates eve");
+    });
 });
