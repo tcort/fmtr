@@ -44,4 +44,8 @@ describe('fmtr', function () {
 
         expect(fmtr('${username} is married to ${spouse} and hates ${enemy}', user)).to.be("alice is married to bob and hates eve");
     });
+
+    it('should support the "\" escape character', function () {
+        expect(fmtr('\\${foo}')).to.be('${foo}');
+    });
 });

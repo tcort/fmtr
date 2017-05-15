@@ -7,7 +7,10 @@ module.exports = function fmtr(str, obj) {
         return '';
     }
 
-    return str.replace(/\$\{([^\}]+)\}/gm, function (match, p1) {
+    return str.replace(/\\?\$\{([^\}]+)\}/gm, function (match, p1) {
+        if (/^\\/.test(match)) {
+            return match.substring(1);
+        }
         return _.get(obj, p1) || '';
     });
 };
