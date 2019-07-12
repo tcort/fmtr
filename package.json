@@ -24,12 +24,12 @@
   },
   "homepage": "https://github.com/tcort/fmtr",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.14"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
     "mocha": "^5.2.0",
-    "jshint": "^2.9.7"
+    "jshint": "^2.10.2"
   },
   "jshintConfig": {
     "bitwise": true,
