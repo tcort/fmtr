@@ -1,6 +1,6 @@
 {
   "name": "fmtr",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "awesome string formatter",
   "main": "index.js",
   "scripts": {
